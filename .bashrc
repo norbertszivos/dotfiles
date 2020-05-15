@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -57,6 +57,14 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=0
+    # GIT_PROMPT_FETCH_REMOTE_STATUS=0
+    GIT_PROMPT_IGNORE_SUBMODULES=1
+    # GIT_PROMPT_WITH_VIRTUAL_ENV=0
+    # GIT_PROMPT_SHOW_UPSTREAM=1
+    # GIT_PROMPT_SHOW_UNTRACKED_FILES=normal
+    # GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0
+
     GIT_PROMPT_THEME=BlackOrWhite
     GIT_PROMPT_BLACK_OR_WHITE_THEME_PS1_COLOR=white
     GIT_PROMPT_BLACK_OR_WHITE_THEME_SHOW_TIME_INSTEAD_OF_USER=1

@@ -33,7 +33,7 @@ $ git clone -b new_theme_black_or_white https://github.com/norbertszivos/bash-gi
 
 The other configs for *bash-git-prompt* already in the `.bashrc` file.
 
-### SSH
+### ssh
 
 If `.ssh` folder is not exist, then create a new folder.
 
@@ -50,7 +50,15 @@ $ chmod 600 ~/.ssh/id_rsa*
 $ ssh-add
 ```
 
-### GPG
+### git
+
+```bash
+$ sudo apt install git
+```
+
+Add user info to `.gitconfig`
+
+### gpg
 
 Find private key.
 
@@ -73,4 +81,13 @@ Copy and import private key.
 
 ```bash
 $ gpg --import private.key
+```
+
+### xsel
+
+`pbcopy` and `pbpaste` commands are not available in Linux.
+However, we can replicate the functionality of `pbcopy` and `pbpaste` commands to use `xsel` and add alias into the `.bashrc`.
+
+```bash
+$ sudo apt install xsel
 ```

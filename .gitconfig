@@ -1,0 +1,42 @@
+[user]
+	name = 
+	email = 
+	signingkey = 
+[branch]
+	autosetuprebase = always
+[color]
+	ui = auto
+[alias]
+	ci = commit
+	cia = commit -a
+	ciaa = commit -a --amend
+	st = status
+	co = checkout
+	br = branch
+	df = diff -w
+	lg = log -p
+	pl = pull
+	ps = push
+	cl = clone
+	tip = log --color --format=fuller -1
+	top = !git --no-pager log --color --graph -15 --format=\"%Cred%h%Creset %cN %Cgreen%ad%Creset %Cblue%d%Creset%s\" --date=short
+	addp = !git add -p && git commit
+	pfwl = push --force-with-lease
+	copysha = !git rev-parse HEAD | pbcopy
+	conflicts = !git ls-files --unmerged | cut -c51- | sort -u | xargs $EDITOR
+	resolve = !git ls-files --unmerged | cut -c51- | sort -u | xargs git add
+	uncommit = reset --soft HEAD^
+	unstage = reset
+	upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
+	ureset = !git reset --hard $(git upstream)
+[push]
+	default = current
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/bin/gpg

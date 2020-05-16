@@ -91,3 +91,14 @@ However, we can replicate the functionality of `pbcopy` and `pbpaste` commands t
 ```bash
 $ sudo apt install xsel
 ```
+
+### tmux
+
+Install tmux plugin manager.
+
+```bash
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+$ tmux
+```
+
+Than press `prefix` + <kbd>I</kbd> (capital i, as in **I**nstall) to fetch the plugins.

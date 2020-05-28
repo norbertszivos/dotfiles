@@ -19,7 +19,7 @@
 	ps = push
 	cl = clone
 	tip = log --color --format=fuller -1
-	top = !git --no-pager log --color --graph -15 --format=\"%Cred%h%Creset %cN %Cgreen%ad%Creset %Cblue%d%Creset%s\" --date=short
+	top = "!f() { git --no-pager log --color --graph -$([ -z \"$1\" ] && echo \"15\" ||  echo \"$1\") --format=\"%Cred%h%Creset %cN %Cgreen%ad%Creset %Cblue%d%Creset%s\" --date=short; }; f"
 	addp = !git add -p && git commit
 	pfwl = push --force-with-lease
 	copysha = !git rev-parse HEAD | pbcopy
@@ -27,6 +27,7 @@
 	resolve = !git ls-files --unmerged | cut -c51- | sort -u | xargs git add
 	uncommit = reset --soft HEAD^
 	unstage = reset
+	unchange = checkout --
 	upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
 	ureset = !git reset --hard $(git upstream)
 [push]

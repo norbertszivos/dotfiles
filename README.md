@@ -102,3 +102,43 @@ $ tmux
 ```
 
 Than press `prefix` + <kbd>I</kbd> (capital i, as in **I**nstall) to fetch the plugins.
+
+### vim
+
+```bash
+$ sudo apt install vim curl
+```
+
+Vim automatically install the pluging manager if it is missing.
+To install the other plugins run this command `:PlugInstall`.
+
+#### NerdFont
+
+Download a Nerd Font e.g. [Ubuntu Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf)
+After that double click on the font file. It will open it in Font Viewer.
+In there, you can see the option to install the font in top right corner.
+
+#### Ripgrep
+
+Use Ripgrep to find files in Vim.
+
+If you run Debian Buster (currently Debian stable) or Ubuntu Cosmic (18.10) (or newer) ripgrep is available using the same packaging as Debian:
+
+```bash
+$ sudo apt-get install ripgrep
+```
+
+Ripgrep can be installed using a binary .deb file provided in each ripgrep release.
+
+```bash
+$ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.0/ripgrep_12.1.0_amd64.deb
+$ sudo dpkg -i ripgrep_12.1.0_amd64.deb
+```
+
+### Inspiration
+
+- [Upcase by thoughtbot](https://thoughtbot.com/upcase)
+- [The Valuable Dev](https://thevaluable.dev/)
+- [BARBARIANmeetsCODING](https://www.barbarianmeetscoding.com)
+- and other people's dotfiles on GitHub.
+

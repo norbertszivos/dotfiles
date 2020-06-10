@@ -60,23 +60,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
-    GIT_PROMPT_ONLY_IN_REPO=0
-    # GIT_PROMPT_FETCH_REMOTE_STATUS=0
-    GIT_PROMPT_IGNORE_SUBMODULES=1
-    # GIT_PROMPT_WITH_VIRTUAL_ENV=0
-    # GIT_PROMPT_SHOW_UPSTREAM=1
-    # GIT_PROMPT_SHOW_UNTRACKED_FILES=normal
-    # GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0
-
-    GIT_PROMPT_THEME=BlackOrWhite
-    GIT_PROMPT_BLACK_OR_WHITE_THEME_PS1_COLOR=white
-    GIT_PROMPT_BLACK_OR_WHITE_THEME_SHOW_TIME_INSTEAD_OF_USER=1
-    #GIT_PROMPT_BLACK_OR_WHITE_THEME_SHOW_LAST_COMMAND_STATE=1
-    GIT_PROMPT_BLACK_OR_WHITE_THEME_SHOW_BRANCH_ICON=1
-    source $HOME/.bash-git-prompt/gitprompt.sh
-fi
-
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -92,6 +75,8 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+source /usr/local/share/bash-git-prompt/prompt.sh
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

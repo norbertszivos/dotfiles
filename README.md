@@ -28,10 +28,16 @@ $ rm -r tmpdotfiles
 ```bash
 $ sudo apt install fonts-powerline
 
-$ git clone -b new_theme_black_or_white https://github.com/norbertszivos/bash-git-prompt.git  ~/.bash-git-prompt --depth=1
+$ sudo git clone -b my_prompt https://github.com/norbertszivos/bash-git-prompt.git /usr/local/share/bash-git-prompt --depth=1
 ```
 
-The other configs for *bash-git-prompt* already in the `.bashrc` file.
+The other configs for *bash-git-prompt* already in the `bash-git-prompt/prompt.sh` and `.bashrc` file.
+
+Configure the root's prompt as well. Paste line below into `/root/.bashrc` file.
+
+```bash
+source /usr/local/share/bash-git-prompt/prompt.sh
+```
 
 ### ssh
 

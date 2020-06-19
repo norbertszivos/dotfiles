@@ -56,6 +56,13 @@ $ chmod 600 ~/.ssh/id_rsa*
 $ ssh-add
 ```
 
+Or generate a new one.
+
+```bash
+$ ssh-keygen -t rsa -b 4096 -C "user@example.com"
+$ ssh-add
+```
+
 ### git
 
 ```bash
@@ -89,6 +96,13 @@ Copy and import private key.
 $ gpg --import private.key
 ```
 
+Or generate a new one.
+
+```bash
+$ gpg --full-generate-key
+$ gpg --list-secret-keys --keyid-format LONG
+```
+
 ### xsel
 
 `pbcopy` and `pbpaste` commands are not available in Linux.
@@ -118,6 +132,14 @@ $ sudo apt install vim curl
 Vim automatically install the pluging manager if it is missing.
 To install the other plugins run this command `:PlugInstall`.
 
+Add crontab to delete empty temporary folders.
+
+```bash
+$ crontab -e
+
+0 10 * * 1 find ~/.vim/tmp/* -mtime +7 -type d -exec rmdir {} \;
+```
+
 #### NerdFont
 
 Download a Nerd Font e.g. [Ubuntu Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf)
@@ -128,7 +150,7 @@ In there, you can see the option to install the font in top right corner.
 
 Use Ripgrep to find files in Vim.
 
-If you run Debian Buster (currently Debian stable) or Ubuntu Cosmic (18.10) (or newer) ripgrep is available using the same packaging as Debian:
+If you run Debian Buster (currently Debian stable) or Ubuntu Cosmic (18.10 or newer) ripgrep is available using the same packaging as Debian:
 
 ```bash
 $ sudo apt-get install ripgrep

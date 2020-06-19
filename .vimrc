@@ -204,6 +204,12 @@ set wildmenu           " Display all matching things when press TAB to complete
 " Map the leader key to SPACE.
 let mapleader="\<Space>"
 
+" Store temporary files in a central spot.
+let vimtmp = $HOME . '/.vim/tmp/' . getpid()
+silent! call mkdir(vimtmp, "p", 0700)
+let &backupdir=vimtmp
+let &directory=vimtmp
+
 "==============================================================================
 " netrw
 "==============================================================================

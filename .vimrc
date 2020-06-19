@@ -187,6 +187,9 @@ set expandtab          " Insert spaces when TAB is pressed.
 set shiftwidth=2       " Indentation amount for < and > commands.
 set softtabstop=2      " What happens when you press the <TAB> or <BS> keys.
 "set tabstop=2         " Changes the width of the TAB character.
+set autoindent         " Automatically indent the next line.
+set smartindent        " Smart indent the next line, racts to the
+                       " syntax/style of the code.
 if !&scrolloff
   set scrolloff=3      " Show next 3 lines while scrolling.
 endif

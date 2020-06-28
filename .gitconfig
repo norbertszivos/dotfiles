@@ -20,6 +20,8 @@
 	cl = clone
 	tip = log --color --format=fuller -1
 	top = "!f() { git --no-pager log --color --graph -$([ -z \"$1\" ] && echo \"15\" ||  echo \"$1\") --format=\"%Cred%h%Creset %cN %Cgreen%ad%Creset %Cblue%d%Creset%s\" --date=short; }; f"
+	rbi = rebase -i
+	rbc = rebase --continue
 	addp = !git add -p && git commit
 	pfwl = push --force-with-lease
 	copysha = !git rev-parse HEAD | pbcopy

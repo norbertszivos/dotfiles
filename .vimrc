@@ -103,6 +103,9 @@ Plug 'Yggdroot/indentLine'
 " A Vim plugin which shows a git diff in the 'gutter' (sign column).
 Plug 'airblade/vim-gitgutter'
 
+" Make the yanked region apparent!
+Plug 'machakann/vim-highlightedyank'
+
 "#################################### Tools ###################################
 
 " A command-line fuzzy finder for Vim.
@@ -228,7 +231,7 @@ let g:netrw_liststyle=3
 " TrimWhitespace
 "==============================================================================
 " Trim automatically when before save the file.
-" autocmd BufWritePre * :call TrimWhitespace()
+autocmd BufWritePre * :call TrimWhitespace()
 
 "############################### Plugin configs ###############################
 
@@ -280,6 +283,11 @@ let g:airline#extensions#branch#format=1
 "==============================================================================
 colorscheme gruvbox
 set background=dark
+
+"==============================================================================
+" vim-highlightedyank
+"==============================================================================
+highlight HighlightedyankRegion cterm=reverse gui=reverse
 
 "==============================================================================
 " indentLine
@@ -594,11 +602,6 @@ inoremap jk <Esc>:w<CR>
 " Just escape (the real escape in vim is Ctrl-[) without save.
 inoremap j[ <Esc>
 
-" Use Ctrl+l to clear the highlighting of :set hlsearch.
-if maparg('<C-l>', 'n') ==# ''
-  nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
-endif
-
 " Indent lines.
 nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
@@ -635,8 +638,14 @@ nnoremap <Leader>je $
 nnoremap <Leader>jp %
 vnoremap <Leader>jp %
 
-" Search into the file (using very megic).
+" Search into the file (using very magic).
 nnoremap <Leader>f /\v
+" Search for visually selected text.
+vnoremap <Leader>f y/\V<C-r>=escape(@",'/\')<CR><CR>
+" Find merge conflict markers.
+nnoremap <Silent> <Leader>fc <Esc>/\v^[<=>]{7}( .*\|$)<CR>
+" Clear the highlighting of :set hlsearch.
+nnoremap <Leader>cs :let @/=""<CR>
 
 " Type <Space>w to save file (a lot faster than :w<Enter>).
 nnoremap <Leader>w :w<CR>
@@ -644,6 +653,8 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 " Type <Space>fq to force quit (will discard any changes).
 nnoremap <Leader>fq :q!<CR>
+" Type <Space>bq to close the actual buffer.
+nnoremap <Leader>bq :bd<CR>
 " Type <Space>x to save and quit.
 nnoremap <Leader>x :x<CR>
 
@@ -659,10 +670,7 @@ map <Leader>ev :vsp %%
 map <Leader>et :tabe %%
 
 " Toggle text wrapping.
-nnoremap <silent> <Leader>iw :set invwrap wrap?<CR>
-
-" Find merge conflict markers.
-nnoremap <silent> <Leader>fc <Esc>/\v^[<=>]{7}( .*\|$)<CR>
+nnoremap <Silent> <Leader>iw :set invwrap wrap?<CR>
 
 " Split vertically/horizontally and focus new window.
 nnoremap <Leader>sv <C-w>v<C-w>l
@@ -674,6 +682,8 @@ nnoremap <Leader>rc :source $MYVIMRC<CR>
 
 " Show Netrw directory explorer (directory tree).
 nnoremap <Leader>tr :e .<CR>
+" Show open buffers list.
+nnoremap <Leader>ls :ls<CR>:b
 
 " Show two files differences in vertical windows.
 nnoremap <Leader>df :vert diffsplit<Space>
@@ -708,12 +718,12 @@ nnoremap <Leader>F :Rg<CR>
 "==============================================================================
 " Note: Using |:noremap| will not work with <Plug> mappings.
 " Search with :Ack in files.
-nmap <leader>sa <Plug>(FerretAck)
+nmap <Leader>sa <Plug>(FerretAck)
 " Search with :Ack for the word currently under the cursor.
-nmap <leader>sc <Plug>(FerretAckWord)
+nmap <Leader>sc <Plug>(FerretAckWord)
 " :Acks, which allows you to run a multi-file replace across all the files
 " placed in the quickfix window by a previous invocation of :Ack.
-nmap <leader>ra <Plug>(FerretAcks)
+nmap <Leader>ra <Plug>(FerretAcks)
 
 "==============================================================================
 " surround.vim

@@ -643,7 +643,7 @@ nnoremap <Leader>f /\v
 " Search for visually selected text.
 vnoremap <Leader>f y/\V<C-r>=escape(@",'/\')<CR><CR>
 " Find merge conflict markers.
-nnoremap <Silent> <Leader>fc <Esc>/\v^[<=>]{7}( .*\|$)<CR>
+nnoremap <silent> <Leader>fc <Esc>/\v^[<=>]{7}( .*\|$)<CR>
 " Clear the highlighting of :set hlsearch.
 nnoremap <Leader>cs :let @/=""<CR>
 
@@ -670,7 +670,7 @@ map <Leader>ev :vsp %%
 map <Leader>et :tabe %%
 
 " Toggle text wrapping.
-nnoremap <Silent> <Leader>iw :set invwrap wrap?<CR>
+nnoremap <silent> <Leader>iw :set invwrap wrap?<CR>
 
 " Split vertically/horizontally and focus new window.
 nnoremap <Leader>sv <C-w>v<C-w>l

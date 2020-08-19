@@ -671,6 +671,12 @@ map <Leader>et :tabe %%
 
 " Toggle text wrapping.
 nnoremap <silent> <Leader>iw :set invwrap wrap?<CR>
+" Toggle invisible characters.
+nnoremap <silent> <Leader>il :set invlist<CR>
+" Toggle line numbers.
+nnoremap <silent> <Leader>in :set invnumber<CR>
+" Toggle gitgutter.
+nnoremap <silent> <Leader>ig :GitGutterSignsToggle<CR>
 
 " Split vertically/horizontally and focus new window.
 nnoremap <Leader>sv <C-w>v<C-w>l

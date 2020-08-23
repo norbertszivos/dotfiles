@@ -150,7 +150,8 @@ In there, you can see the option to install the font in top right corner.
 
 Use Ripgrep to find files in Vim.
 
-If you run Debian Buster (currently Debian stable) or Ubuntu Cosmic (18.10 or newer) ripgrep is available using the same packaging as Debian:
+If you run Debian Buster (currently Debian stable) or Ubuntu Cosmic (18.10 or newer)
+ripgrep is available using the same packaging as Debian:
 
 ```bash
 $ sudo apt-get install ripgrep
@@ -162,6 +163,14 @@ Ripgrep can be installed using a binary .deb file provided in each ripgrep relea
 $ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.0/ripgrep_12.1.0_amd64.deb
 $ sudo dpkg -i ripgrep_12.1.0_amd64.deb
 ```
+
+### Terminal color scheme
+
+Visit on the [Gogh](http://mayccoll.github.io/Gogh/) website to check the color schemes for terminals.
+Follow the instructions to install the chosen color scheme or clone the
+[GitHub repository of Gogh](https://github.com/Mayccoll/Gogh) and use script(s) from there.
+The color scheme of vim is [gruvbox](https://github.com/morhetz/gruvbox), so it worth to choose the
+same for the terminal as well: [gruvbox color scheme from Gogh](https://github.com/Mayccoll/Gogh/blob/master/themes/gruvbox-dark.sh).
 
 ### Inspiration
 

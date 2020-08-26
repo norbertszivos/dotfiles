@@ -32,6 +32,7 @@ $ sudo git clone -b my_prompt https://github.com/norbertszivos/bash-git-prompt.g
 ```
 
 The other configs for *bash-git-prompt* already in the `bash-git-prompt/prompt.sh` and `.bashrc` file.
+See `prompt.sh` [here](https://github.com/norbertszivos/bash-git-prompt/blob/my_prompt/prompt.sh).
 
 Configure the root's prompt as well. Paste line below into `/root/.bashrc` file.
 

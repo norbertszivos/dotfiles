@@ -495,6 +495,30 @@ let g:fzf_layout={ 'down': '~60%' }
 "| U                  | Undo all changes.                                     |
 
 "------------------------------------------------------------------------------
+" Copy and Replace
+"------------------------------------------------------------------------------
+"| Mapping | Operation                                                        |
+"|---------|------------------------------------------------------------------|
+"| yiw     | Yank inner word (copy word under cursor, say "first"). Move the  |
+"|         | cursor to another word (say "second").                           |
+"| viwp    | Select "second", then replace it with "first". Move the cursor   |
+"|         | to another word (say "third").                                   |
+"| viw"0p  | Select "third", then replace it with "first".                    |
+"|         |                                                                  |
+"| yi"     | Yank inner text (text containing cursor which is in quotes).     |
+"|         | Move the cursor to other quoted text.                            |
+"| vi"p    | Change the quoted text, replacing it with the copied text.       |
+"|         | Move the cursor to other quoted text.                            |
+"| vi""0p  | Repeat the operation (change the quoted text and replace it with |
+"|         | the copy).                                                       |
+"|         |                                                                  |
+"| yy      | Yank current line (say "first line"). Move the cursor to another |
+"|         | line (say "second line").                                        |
+"| Vp      | Select "second line", then replace it with "first line".         |
+"|         | Move the cursor to another line (say "third line").              |
+"| V"0p    | Select "third line", then replace it with "first line".          |
+
+"------------------------------------------------------------------------------
 " Autocompletion
 "------------------------------------------------------------------------------
 "| Mapping | Operation                                                        |
@@ -646,6 +670,13 @@ vnoremap <Leader>f y/\V<C-r>=escape(@",'/\')<CR><CR>
 nnoremap <silent> <Leader>fc <Esc>/\v^[<=>]{7}( .*\|$)<CR>
 " Clear the highlighting of :set hlsearch.
 nnoremap <Leader>cs :let @/=""<CR>
+
+" Replace the current word with the last yanked text.
+" You can repeat the operation to replace words at different locations.
+nnoremap <Leader>rw diw"0P
+" Replace the current line with the last yanked text.
+" You can repeat the operation to replace lines at different locations.
+nnoremap <Leader>rl V"0p
 
 " Type <Space>w to save file (a lot faster than :w<Enter>).
 nnoremap <Leader>w :w<CR>

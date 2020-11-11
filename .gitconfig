@@ -19,15 +19,15 @@
 	df = diff -w
 	lg = log -p
 	tip = log --color --format=fuller -1
-	top = "!f() { git --no-pager log --color --graph -$([ -z \"$1\" ] && echo \"15\" ||  echo \"$1\") --format=\"%Cred%h%Creset %cN %Cgreen%ad%Creset %Cblue%d%Creset%s\" --date=short; }; f"
+	top = "!f() { git --no-pager log --color --graph -$([ -z \"$1\" ] && echo \"15\" ||  echo \"$1\") --format=\"%Cred%h%Creset %cN %Cgreen%ad%Creset%Cblue%d%Creset %s\" --date=short; }; f"
 	pl = pull
 	ps = push
-	pfwl = push --force-with-lease
+	psfwl = push --force-with-lease
 	pswt = !git push && git push --tags
 	rbi = rebase -i
 	rbias = rebase -i --autosquash
 	rbc = rebase --continue
-	copysha = !git rev-parse HEAD | xsel --clipboard --input
+	copysha = "!f() { git log -$([ -z \"$1\" ] && echo \"1\" ||  echo \"$1\") --format=\"%h\" | tail -1 | tr -d \"\n\" | xsel --clipboard --input; }; f"
 	conflicts = !git ls-files --unmerged | cut -c51- | sort -u | xargs $EDITOR
 	resolve = !git ls-files --unmerged | cut -c51- | sort -u | xargs git add
 	uncommit = reset --soft HEAD^

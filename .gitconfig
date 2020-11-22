@@ -14,7 +14,8 @@
 	addp = !git add -p && git commit
 	ci = commit
 	cia = commit -a
-	ciaa = commit -a --amend
+	ciaam = commit -a --amend
+	ciam = commit --amend
 	cif = commit --fixup
 	df = diff -w
 	lg = log -p

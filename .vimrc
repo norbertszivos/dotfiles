@@ -171,6 +171,21 @@ function! RelativeNumberToggle()
   endif
 endfunction
 
+"==============================================================================
+" Zoom / Restore window.
+"==============================================================================
+function! ZoomToggle()
+    if exists('t:zoomed') && t:zoomed
+        execute t:zoom_winrestcmd
+        let t:zoomed = 0
+    else
+        let t:zoom_winrestcmd = winrestcmd()
+        resize
+        vertical resize
+        let t:zoomed = 1
+    endif
+endfunction
+
 "##############################################################################
 "################################## Settings ##################################
 "##############################################################################
@@ -738,6 +753,12 @@ nnoremap <Leader>tw :call TrimWhitespace()<CR>
 "==============================================================================
 " Toggle between normal and relative numbering.
 nnoremap <Leader>rn :call RelativeNumberToggle()<CR>
+
+"==============================================================================
+" ZoomToggle
+"==============================================================================
+" Toggle between normal and zoomed window.
+nnoremap <Leader>zw :call ZoomToggle()<CR>
 
 "############################### Plugin mappings ##############################
 

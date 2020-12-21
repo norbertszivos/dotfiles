@@ -586,6 +586,13 @@ let g:fzf_layout={ 'down': '~60%' }
 "| Ctrl-w l         | Takes you to the split on the right                     |
 "|                  | (also Ctrl-w Ctrl-l).                                   |
 "| Ctrl-w w         | Lets you switch windows (also Ctrl-w Ctrl-w).           |
+"| Ctrl-w r         | Rotate windows downwards/rightwards.                    |
+"| Ctrl-w R         | Rotate windows upwards/leftwards.                       |
+"| Ctrl-w x         | Swap the current window with the next one.              |
+"| Ctrl-w H         | Move current window to the far left.                    |
+"| Ctrl-w J         | Move current window to the very bottom.                 |
+"| Ctrl-w K         | Move current window to the very top.                    |
+"| Ctrl-w L         | Move current window to the far right.                   |
 "| Ctrl-w o         | Closes all other windows and makes the current window   |
 "|                  | the only one on the screen (also Ctrl-w Ctrl-o).        |
 "| Ctrl-w >         | Resize a vertical split (increasing it's width).        |

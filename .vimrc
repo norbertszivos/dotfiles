@@ -133,6 +133,11 @@ Plug 'tpope/vim-fugitive'
 " Automatically create any non-existent directories before writing the buffer.
 Plug 'pbrisbin/vim-mkdir'
 
+" When combined with a set of tmux key bindings, the plugin will allow you to
+" navigate seamlessly between vim and tmux splits using a consistent set of
+" hotkeys.
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
 "##############################################################################

@@ -349,9 +349,11 @@ let g:fzf_colors=
 "                  (in this case ignore everything in the .git/ folder)
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always ' .
+  \   'rg --hidden --column --line-number --no-heading --color=always ' .
   \   '--colors "path:fg:108" --colors "line:fg:109" --smart-case '
   \   .shellescape(<q-args>), 1, { 'options': '--color hl:214,hl+:214' }, 0)
+
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git" '
 
 let g:fzf_action={
   \ 'ctrl-t': 'tab split',

@@ -668,6 +668,8 @@ nnoremap <C-z> :undo<CR>
 nnoremap <C-y> :redo<CR>
 inoremap <C-z> <Esc>:undo<CR>
 inoremap <C-y> <Esc>:redo<CR>
+vnoremap <C-z> <Esc>:undo<CR>
+vnoremap <C-y> <Esc>:redo<CR>
 
 " Copy selected text (yank visual) to clipboard.
 vnoremap <C-c> "*y

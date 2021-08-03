@@ -20,7 +20,7 @@
 	df = diff -w
 	lg = log -p
 	tip = log --color --format=fuller -1
-	top = "!f() { git --no-pager log --color --graph -$([ -z \"$1\" ] && echo \"15\" ||  echo \"$1\") --format=\"%Cred%h%Creset %cN %Cgreen%ad%Creset%Cblue%d%Creset %s\" --date=short; }; f"
+	top = "!f() { git --no-pager log --color --graph -$([ -z \"$1\" ] && echo \"15\" ||  echo \"$1\") --format=\"%Cred%h%Creset %cN %Cgreen%ad%Creset%Cblue%d%Creset %s\" --date=short | awk 'BEGIN { count = 1 } { if($6 == \"\") { prefix = \"\" } else { prefix = count; count++ }; printf(\"\\033[1m%3s\\033[0m %s\\n\", prefix, $0) }'; }; f"
 	pl = pull
 	ps = push
 	psfwl = push --force-with-lease

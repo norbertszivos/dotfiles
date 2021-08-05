@@ -654,6 +654,7 @@ inoremap kj <Esc>:w<CR>
 inoremap jk <Esc>:w<CR>
 " Just escape (the real escape in vim is Ctrl-[) without save.
 inoremap j[ <Esc>
+vnoremap j[ <Esc>
 
 " Indent lines.
 nnoremap <Tab> >>_

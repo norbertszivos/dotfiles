@@ -649,8 +649,7 @@ let g:fzf_layout={ 'down': '~60%' }
 " Force saving files that require root permission.
 cnoremap w!! %!sudo tee > /dev/null %
 
-" Type kj or jk to call Esc (and save the file) in insert mode.
-inoremap kj <Esc>:w<CR>
+" Type jk to call Esc (and save the file) in insert mode.
 inoremap jk <Esc>:w<CR>
 " Just escape (the real escape in vim is Ctrl-[) without save.
 inoremap j[ <Esc>

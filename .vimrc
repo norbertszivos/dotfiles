@@ -527,6 +527,10 @@ let g:fzf_layout={ 'down': '~60%' }
 "|         | to another word (say "third").                                   |
 "| viw"0p  | Select "third", then replace it with "first".                    |
 "|         |                                                                  |
+"| *Ncgn   | Select "all matching words" and edit it then escape from the     |
+"|         | insert mode.                                                     |
+"| .       | Press dot to "replace" the "other matching words".               |
+"|         |                                                                  |
 "| yi"     | Yank inner text (text containing cursor which is in quotes).     |
 "|         | Move the cursor to other quoted text.                            |
 "| vi"p    | Change the quoted text, replacing it with the copied text.       |

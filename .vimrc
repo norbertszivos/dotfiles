@@ -651,6 +651,7 @@ cnoremap w!! %!sudo tee > /dev/null %
 
 " Type jk to call Esc (and save the file) in insert mode.
 inoremap jk <Esc>:w<CR>
+inoremap JK <Esc>:w<CR>
 " Just escape (the real escape in vim is Ctrl-[) without save.
 inoremap j[ <Esc>
 vnoremap j[ <Esc>

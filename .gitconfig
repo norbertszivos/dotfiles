@@ -17,6 +17,7 @@
 	ciaam = commit -a --amend
 	ciam = commit --amend
 	cif = commit --fixup
+	ciaf = commit -a --fixup
 	df = diff -w
 	lg = log -p
 	tip = log --color --format=fuller -1

@@ -723,14 +723,22 @@ nnoremap <Leader>rl V"0p
 
 " Type <Space>w to save file (a lot faster than :w<Enter>).
 nnoremap <Leader>w :w<CR>
+" Type <Space>wa to save all files.
+nnoremap <Leader>wa :wa<CR>
 " Type <Space>q to quit.
 nnoremap <Leader>q :q<CR>
+" Type <Space>qa to quit from all files.
+nnoremap <Leader>qa :qa<CR>
 " Type <Space>fq to force quit (will discard any changes).
 nnoremap <Leader>fq :q!<CR>
+" Type <Space>fqa to force quit from all files (will discard any changes).
+nnoremap <Leader>fqa :qa!<CR>
 " Type <Space>bq to close the actual buffer.
 nnoremap <Leader>bq :bd<CR>
 " Type <Space>x to save and quit.
 nnoremap <Leader>x :x<CR>
+" Type <Space>xa to save and quit from all files.
+nnoremap <Leader>xa :xa<CR>
 
 " Type <Space>ew and it expands to :e path/to/directory/of/current/file/.
 " This makes it really easy to open several files from the same directory.

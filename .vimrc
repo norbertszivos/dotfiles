@@ -489,6 +489,12 @@ let g:fzf_layout={ 'down': '~60%' }
 "| <action>at         | (d)elete/(c)hange/(y)ank an HTML tag (e.g. dat).      |
 "| <action>it         | (d)elete/(c)hange/(y)ank the contents of an HTML tag  |
 "|                    | (e.g. dit).                                           |
+"| gu<motion>         | Change lowercase up to motion (e.g. guj).             |
+"| guiw               | Change lowercase the inner word.                      |
+"| gU<motion>         | Change uppercase up to motion (e.g. gUj).             |
+"| gUiw               | Change uppercase the inner word.                      |
+"| g~<motion>         | Switch case up to motion (e.g. g~j).                  |
+"| g~iw               | Switch case the inner word.                           |
 "| p                  | Paste stuff after the cursor.                         |
 "| P                  | Paste stuff before the cursor.                        |
 "| x                  | Delete a character.                                   |
@@ -527,7 +533,7 @@ let g:fzf_layout={ 'down': '~60%' }
 "|         | to another word (say "third").                                   |
 "| viw"0p  | Select "third", then replace it with "first".                    |
 "|         |                                                                  |
-"| *Ncgn   | Select "all matching words" and edit it then escape from the     |
+"| *Ncgn   | Select "all matching words" and edit it, than escape from the    |
 "|         | insert mode.                                                     |
 "| .       | Press dot to "replace" the "other matching words".               |
 "|         |                                                                  |
@@ -634,6 +640,7 @@ let g:fzf_layout={ 'down': '~60%' }
 "|              | (nothing is deleted).                                       |
 "| :bd!         | Delete the current buffer; will discard any changes         |
 "|              | (changes are lost).                                         |
+"| Ctrl-6       | Switch between the last opened buffers (or Ctrl-Shift-6)    |
 
 "------------------------------------------------------------------------------
 " Open, Save and Exit

@@ -180,23 +180,28 @@ endfunction
 " Zoom / Restore window.
 "==============================================================================
 function! ZoomToggle()
-    if exists('t:zoomed') && t:zoomed
-        execute t:zoom_winrestcmd
-        let t:zoomed = 0
-    else
-        let t:zoom_winrestcmd = winrestcmd()
-        resize
-        vertical resize
-        let t:zoomed = 1
-    endif
+  if exists('t:zoomed') && t:zoomed
+    execute t:zoom_winrestcmd
+    let t:zoomed = 0
+  else
+    let t:zoom_winrestcmd = winrestcmd()
+    resize
+    vertical resize
+    let t:zoomed = 1
+  endif
 endfunction
 
 "##############################################################################
 "################################## Settings ##################################
 "##############################################################################
 set encoding=utf-8     " Use UTF-8 encoding.
-" Length of time waits after stop typing (default: 4000 millisec.).
-"set updatetime=750
+" Time in milliseconds waits after stop typing to write data to disk (default:
+" 4000 milliseconds).
+" set updatetime=750
+set timeout            " Switch on timeout for mapped keys (default: on).
+" Time in milliseconds waits for a mapped key to complete (default: 1000
+" milliseconds).
+set timeoutlen=550
 set number             " Show the line numbers on the left side.
 set colorcolumn=80     " Show a vertical line at 80th character.
 " Tell Vim which characters to show for expanded TABs.

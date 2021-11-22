@@ -133,12 +133,12 @@ $ sudo apt install vim curl
 Vim automatically install the pluging manager if it is missing.
 To install the other plugins run this command `:PlugInstall`.
 
-Add crontab to delete empty temporary folders.
+Add crontab to delete all temporary folders which is older than 7 days.
 
 ```bash
 $ crontab -e
 
-0 10 * * 1 find ~/.vim/tmp/* -mtime +7 -type d -exec rmdir {} \;
+0 10 * * 1 find ~/.vim/tmp/* -mtime +7 -type d -exec rm -rf {} \;
 ```
 
 #### NerdFont

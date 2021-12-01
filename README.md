@@ -141,6 +141,17 @@ $ crontab -e
 0 10 * * 1 find ~/.vim/tmp/* -mtime +7 -type d -exec rm -rf {} \;
 ```
 
+#### vimcaps
+
+Never be bothered by caps lock.
+
+For Linux users, you need to compile the library manually, or let vimcaps compile it automatically,
+but make, gcc, Xlib must be installed first.
+
+```bash
+$ sudo apt install make gcc libx11-dev
+```
+
 #### NerdFont
 
 Download a Nerd Font e.g. [Ubuntu Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf)

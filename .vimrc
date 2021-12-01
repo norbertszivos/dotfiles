@@ -138,6 +138,11 @@ Plug 'pbrisbin/vim-mkdir'
 " hotkeys.
 Plug 'christoomey/vim-tmux-navigator'
 
+" Never be bothered by caps lock.
+" For Linux user, you need to compile the library manually, or let vimcaps
+" compile it automatically. But make, gcc, libx11-dev must be installed first.
+Plug 'suxpert/vimcaps'
+
 call plug#end()
 
 "##############################################################################

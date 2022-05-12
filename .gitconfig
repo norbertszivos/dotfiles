@@ -30,6 +30,7 @@
 	rbias = rebase -i --autosquash
 	rbc = rebase --continue
 	sts = stash
+	stsps = stash push
 	stsp = stash pop
 	stsl = stash list
 	stss = stash show

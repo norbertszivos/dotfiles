@@ -862,12 +862,11 @@ nmap <Leader>ra <Plug>(FerretAcks)
 "==============================================================================
 " fugitive.vim
 "==============================================================================
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gl :Glog<CR>
-nnoremap <Leader>gc :Gcommit<CR>
-nnoremap <Leader>ga :Gcommit --amend -v<CR>
-nnoremap <Leader>gv :Gcommit -v<CR>
+nnoremap <Leader>gs :Git<CR>
+nnoremap <Leader>gb :Git blame<CR>
+nnoremap <Leader>gd :Git diff<CR>
+nnoremap <Leader>gl :Git log<CR>
+nnoremap <Leader>ga :Git add .<CR>
+nnoremap <Leader>gc :Git commit<CR>
 nnoremap <Leader>gp :Git push<CR>
 

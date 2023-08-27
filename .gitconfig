@@ -18,6 +18,9 @@
 	ciam = commit --amend
 	cif = commit --fixup
 	ciaf = commit -a --fixup
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
 	df = diff -w
 	lg = log -p
 	tip = log --color --format=fuller -1
@@ -28,6 +31,7 @@
 	pswt = !git push && git push --tags
 	rbi = rebase -i
 	rbias = rebase -i --autosquash
+	rba = rebase --abort
 	rbc = rebase --continue
 	sts = stash
 	stsps = stash push
@@ -35,6 +39,7 @@
 	stsl = stash list
 	stss = stash show
 	stssp = stash show -p
+	stsd = stash drop
 	copysha = "!f() { git --no-pager log --graph -$([ -z \"$1\" ] && echo \"1\" ||  echo \"$1\") --format=\"%h\" | awk '/[[:alnum:]]/' | tail -1 | tr -cd \"[:alnum:]\" | xsel --clipboard --input; }; f"
 	conflicts = !git ls-files --unmerged | cut -c51- | sort -u | xargs $EDITOR
 	resolve = !git ls-files --unmerged | cut -c51- | sort -u | xargs git add

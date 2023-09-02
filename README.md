@@ -26,6 +26,7 @@ $ rm -r tmpdotfiles
 ### bash-git-prompt
 
 ```bash
+# It is only needed if you don't want to use Nerd Fonts.
 $ sudo apt install fonts-powerline
 
 $ sudo git clone -b my_prompt https://github.com/norbertszivos/bash-git-prompt.git /usr/local/share/bash-git-prompt --depth=1
@@ -34,7 +35,7 @@ $ sudo git clone -b my_prompt https://github.com/norbertszivos/bash-git-prompt.g
 The other configs for *bash-git-prompt* already in the `bash-git-prompt/prompt.sh` and `.bashrc` file.
 See `prompt.sh` [here](https://github.com/norbertszivos/bash-git-prompt/blob/my_prompt/prompt.sh).
 
-Configure the root's prompt as well. Paste line below into `/root/.bashrc` file.
+Configure the root's prompt as well. Paste the line below into `/root/.bashrc` file.
 
 ```bash
 source /usr/local/share/bash-git-prompt/prompt.sh
@@ -42,7 +43,7 @@ source /usr/local/share/bash-git-prompt/prompt.sh
 
 ### ssh
 
-If `.ssh` folder is not exist, then create a new folder.
+If `.ssh` folder is not existing, then create a new folder.
 
 ```bash
 $ mkdir .ssh
@@ -106,7 +107,7 @@ $ gpg --list-secret-keys --keyid-format LONG
 
 ### xsel
 
-`pbcopy` and `pbpaste` commands are not available in Linux.
+`pbcopy` and `pbpaste` commands are not available on Linux.
 However, we can replicate the functionality of `pbcopy` and `pbpaste` commands to use `xsel` and add alias into the `.bashrc`.
 
 ```bash
@@ -122,7 +123,7 @@ $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 $ tmux
 ```
 
-Than press `prefix` + <kbd>I</kbd> (capital i, as in **I**nstall) to fetch the plugins.
+Then press `prefix` + <kbd>I</kbd> (capital i, as in **I**nstall) to fetch the plugins.
 
 ### vim
 
@@ -130,10 +131,10 @@ Than press `prefix` + <kbd>I</kbd> (capital i, as in **I**nstall) to fetch the p
 $ sudo apt install vim curl
 ```
 
-Vim automatically install the pluging manager if it is missing.
-To install the other plugins run this command `:PlugInstall`.
+Vim automatically installs the plugin manager, if it is missing.
+To install the other plugins, run this command `:PlugInstall`.
 
-Add crontab to delete all temporary folders which is older than 7 days.
+Add crontab to delete all temporary folders which are older than 7 days.
 
 ```bash
 $ crontab -e
@@ -152,11 +153,11 @@ but make, gcc, Xlib must be installed first.
 $ sudo apt install make gcc libx11-dev
 ```
 
-#### NerdFont
+#### Nerd Fonts
 
-Download a Nerd Font e.g. [Ubuntu Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf)
-After that double click on the font file. It will open it in Font Viewer.
-In there, you can see the option to install the font in top right corner.
+Download Nerd Fonts, e.g. UbuntuMono Nerd Font from the [Nerd Fonts](https://www.nerdfonts.com/font-downloads) homepage.
+After to extract the downloaded file, double-click on a font file. It will open the file in the Font Viewer.
+In there, you can see the option to install the font in the top right corner.
 
 #### Ripgrep
 
@@ -181,7 +182,7 @@ $ sudo dpkg -i ripgrep_12.1.0_amd64.deb
 Visit on the [Gogh](http://mayccoll.github.io/Gogh/) website to check the color schemes for terminals.
 Follow the instructions to install the chosen color scheme or clone the
 [GitHub repository of Gogh](https://github.com/Mayccoll/Gogh) and use script(s) from there.
-The color scheme of vim is [gruvbox](https://github.com/morhetz/gruvbox), so it worth to choose the
+The color scheme of vim is [gruvbox](https://github.com/morhetz/gruvbox), so it is worth to choose the
 same for the terminal as well: [gruvbox color scheme from Gogh](https://github.com/Mayccoll/Gogh/blob/master/themes/gruvbox-dark.sh).
 
 ### Inspiration
@@ -190,4 +191,3 @@ same for the terminal as well: [gruvbox color scheme from Gogh](https://github.c
 - [The Valuable Dev](https://thevaluable.dev/)
 - [BARBARIANmeetsCODING](https://www.barbarianmeetscoding.com)
 - and other people's dotfiles on GitHub.
-
